@@ -1,24 +1,27 @@
 {
-    "name": "Elixir",
-    "build":{
-      "dockerfile": "Dockerfile",
-      "context": ".."
-      
+  "name": "Elixir",
+  "build": {
+    "dockerfile": "Dockerfile",
+    "context": ".."
+  },
+  "customizations": {
+    "vscode/settings": {
+      "terminal.integrated.defaultProfile.linux": "bash"
     },
-    "customizations": {
-      "vscode/settings": {
-        "terminal.integrated.defaultProfile.linux": "bash"
-      },
-      // Add the IDs of extensions you want installed when the container is created.
-      "vscode/extensions": [
-        "editorconfig.editorconfig",
-        "saratravi.elixir-formatter",
-        "jakebecker.elixir-ls",
-        "redhat.vscode-yaml"
-      ]
-    },
-    // Use 'forwardPorts' to make a list of ports inside the container available locally.
-    "forwardPorts": [4000],
-    "postCreateCommand": "",
-    "remoteUser": "vscode"
+    // Add the IDs of extensions you want installed when the container is created.
+    "vscode/extensions": [
+      "editorconfig.editorconfig",
+      "saratravi.elixir-formatter",
+      "jakebecker.elixir-ls",
+      "redhat.vscode-yaml",
+      "phoenixframework/vscode-phoenix",
+      "elixir-lsp/vscode-elixir-ls"
+    ]
+  },
+  // Use 'forwardPorts' to make a list of ports inside the container available locally.
+  "forwardPorts": [
+    4000
+  ],
+  "postCreateCommand": "",
+  "remoteUser": "vscode"
 }
